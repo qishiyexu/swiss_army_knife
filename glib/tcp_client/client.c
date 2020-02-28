@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <gio/gio.h>
 
-#define HOST "192.168.90.192"
-#define PORT 9876
+#define HOST "127.0.0.1"
+#define PORT 2345
 
 
 typedef struct ClientConnection {

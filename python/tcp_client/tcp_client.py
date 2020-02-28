@@ -1,8 +1,8 @@
 # coding: utf8
 from socket import *
 
-HOST = '192.168.90.192'
-PORT = 9876
+HOST = '127.0.0.1'
+PORT = 2345
 
 ADDR = (HOST, PORT)
 BUFSIZE = 1024
