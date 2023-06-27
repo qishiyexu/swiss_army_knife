@@ -9,14 +9,14 @@ class EchoServerProtocol(Protocol):
 		print('> Now conn=%d' % self.factory.conn)
  
 	def dataReceived(self, data):
-		print('> Data from client: %s'% data)
+	#	print('> Data from client: %s'% data)
 		self.transport.write(data)
  
-		print('>Host: ',repr(self.transport.getHost()))
-		print('>Peer: ',repr(self.transport.getPeer()))
+#		print('>Host: ',repr(self.transport.getHost()))
+#		print('>Peer: ',repr(self.transport.getPeer()))
 		#Close connection with client
-		self.transport.loseConnection()
-		self.factory.conn = self.factory.conn - 1
+	#	self.transport.loseConnection()
+	#	self.factory.conn = self.factory.conn - 1
 	
 class EchoServerFactory(Factory):
 	protocol = EchoServerProtocol
@@ -24,6 +24,7 @@ class EchoServerFactory(Factory):
 		self.conn = 0
  
 if __name__ == '__main__':
+	print('> Listening on 8888...')
 	serverFromString(reactor,'tcp:8888').\
 			listen(
 				EchoServerFactory()
